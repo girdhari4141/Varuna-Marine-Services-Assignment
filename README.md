@@ -1,30 +1,35 @@
 # FuelEU Maritime – Compliance Dashboard
 
-A full-stack web application implementing **FuelEU Maritime Regulation** compliance tracking, focusing on **Article 20 (Banking)** and **Article 21 (Pooling)** logic. The system enables maritime operators to manage route compliance, bank surplus compliance balances, and create pooling agreements across vessels.
+A full-stack web application designed to streamline compliance tracking under the FuelEU Maritime Regulation, with a particular focus on Article 20 (Banking) and Article 21 (Pooling). It allows maritime operators to efficiently manage route compliance, bank surplus compliance balances, and establish pooling agreements among vessels.
 
-Built with **Hexagonal Architecture** for maintainability and clean separation of concerns.
-
----
-
-## 🚀 Tech Stack
-
-### Frontend
-- **React 19** + **TypeScript**
-- **Vite 7** (Build tool)
-- **Tailwind CSS v4** (Styling)
-- **Recharts** (Data visualization)
-
-### Backend
-- **Node.js** + **TypeScript**
-- **Express.js** (REST API)
-- **Prisma ORM**
-- **PostgreSQL** (Supabase)
+The system is built using a Hexagonal Architecture, ensuring high maintainability, scalability, and a clear separation of concerns across all layers.
 
 ---
 
-## 🏗️ Architecture
+🚀 Tech Stack
+Frontend
 
-This project follows **Hexagonal Architecture (Ports & Adapters)** to separate business logic from infrastructure concerns.
+React 19 with TypeScript
+
+Vite 7 for fast builds and development
+
+Tailwind CSS v4 for modern, responsive styling
+
+Recharts for dynamic data visualization
+
+Backend
+
+Node.js with TypeScript
+
+Express.js for building RESTful APIs
+
+Prisma ORM for type-safe database interactions
+
+PostgreSQL (hosted on Supabase) for reliable data storage
+
+🏗️ Architecture
+
+The application is built using a Hexagonal Architecture (Ports & Adapters) pattern, promoting clean separation between core business logic and external infrastructure. This design ensures maintainability, scalability, and ease of testing across both frontend and backend systems.
 
 ```
 backend/
