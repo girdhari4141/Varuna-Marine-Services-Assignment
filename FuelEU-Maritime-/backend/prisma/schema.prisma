@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Route {
+  id              Int               @id @default(autoincrement())
+  route_id        String            @unique
+  vesselType      String
+  fuelType        String
+  year            Int
+  ghg_intensity   Float
+  fuelConsumption Float
+  distance        Float
+  totalEmissions  Float
+  is_baseline     Boolean           @default(false)
+
+  // Back-relations
+  shipCompliances ShipCompliance[]  
+  bankEntries     BankEntry[]      
+
+  @@map("routes")
+}
+
+model ShipCompliance {
+  id        Int     @id @default(autoincrement())
+  ship_id   String
+  year      Int
+  cb_gco2eq Float
+
+  // Relation to Route via Route.route_id (which is unique)
+  route Route @relation(fields: [ship_id], references: [route_id])
+
+  @@map("ship_compliance")
+}
+
+model BankEntry {
+  id            Int     @id @default(autoincrement())
+  ship_id       String
+  year          Int
+  amount_gco2eq Float
+
+  // Relation to Route via Route.route_id
+  route Route @relation(fields: [ship_id], references: [route_id])
+
+  @@map("bank_entries")
+}
+
+model Pool {
+  id         Int          @id @default(autoincrement())
+  year       Int
+  created_at DateTime     @default(now())
+
+  // members relation
+  members    PoolMember[]
+
+  @@map("pools")
+}
+
+model PoolMember {
+  id       Int     @id @default(autoincrement())
+  pool_id  Int
+  ship_id  String
+  cb_before Float
+  cb_after  Float
+
+  // Relation to Pool
+  pool Pool @relation(fields: [pool_id], references: [id])
+
+  @@map("pool_members")
+}
