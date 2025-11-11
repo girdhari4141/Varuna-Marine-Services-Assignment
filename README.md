@@ -161,15 +161,10 @@ Frontend runs on `http://localhost:5173`
 
 ---
 
-## 👨‍💻 Contact
-
-**Tanish Jagetiya**  
-B.Tech Computer Science & Engineering (3rd Year)  
-National Institute of Technology, Delhi  
-
-📧 Email: [tanishjagetiya@gmail.com](mailto:tanishjagetiya@gmail.com)  
-🔗 GitHub: [@Tanish196](https://github.com/Tanish196)  
-🔗 Repository: [FuelEU-Maritime-](https://github.com/Tanish196/FuelEU-Maritime-)
+## college and name
+Girdhari Lal Sharma
+B.Tech Biomedical Engineering (2026)  
+National Institute of Technology, Rourkela 
 
 ---
 
@@ -179,4 +174,3 @@ This project is part of an academic assignment for FuelEU Maritime Regulation im
 
 ---
 
-**Built with ❤️ using Hexagonal Architecture**
